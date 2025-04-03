@@ -1,0 +1,27 @@
+services:
+  parameter_set:
+    build: 
+      context: .
+    network_mode: host
+    ipc: host
+    volumes:
+      - ./ros2_ws:/ros2_ws
+    command: bash -c "source /ros2_ws/install/setup.bash && ros2 run tutorial_parameter parameter --ros-args --params-file install/tutorial_parameter/share/tutorial_parameter/cfg/parameter.yaml"
+
+  parameter:
+    build: 
+      context: .
+    network_mode: host
+    ipc: host
+    volumes:
+      - ./ros2_ws:/ros2_ws
+    command: bash -c "source /ros2_ws/install/setup.bash && ros2 run tutorial_parameter parameter"
+
+  parameter_c:
+    build: 
+      context: .
+    network_mode: host
+    ipc: host
+    volumes:
+      - ./ros2_ws:/ros2_ws
+    command: bash -c "source /ros2_ws/install/setup.bash && ros2 run tutorial_parameter parameter_client"

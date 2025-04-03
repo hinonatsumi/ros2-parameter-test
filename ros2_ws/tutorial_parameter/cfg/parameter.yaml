@@ -1,0 +1,5 @@
+parameter:
+  ros__parameters:
+    int_val: 100
+    double_val: 100.0
+    str_val: "goodbye"
